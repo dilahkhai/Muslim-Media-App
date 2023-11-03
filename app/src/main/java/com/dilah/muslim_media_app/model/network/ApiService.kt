@@ -5,6 +5,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+// declare the method for controlling data that we want
+// to declare the data that we want to take (more specific)
 interface ApiService {
 
     @GET("/v2/everything")
@@ -17,8 +19,8 @@ interface ApiService {
 
     @GET("/v2/everything")
     fun getAlQuranNews(
-        @Query("q") q: String = "Al - Quran",
-        @Query("language") language: String = "Al - Quran"
+        @Query("q") q: String = "al-quran",
+        @Query("language") language: String = "en"
     ): Call<NewsResponse>
 
     @GET("/v2/top-headlines")

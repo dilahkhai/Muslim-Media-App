@@ -1,12 +1,9 @@
 package com.dilah.muslim_media_app.adapter
 
 import android.content.Intent
-
-import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.dilah.muslim_media_app.R
 import com.dilah.muslim_media_app.databinding.ItemNewsOneBinding
@@ -39,7 +36,6 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
     override fun getItemCount(): Int = listNews.size
 
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val news = listNews[position]
 

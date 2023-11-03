@@ -10,8 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dilah.muslim_media_app.NewsViewModel
 import com.dilah.muslim_media_app.adapter.NewsAdapter
-import com.dilah.muslim_media_app.databinding.FragmentAlJazeeraBinding
-import com.dilah.muslim_media_app.databinding.FragmentCommonBinding
 import com.dilah.muslim_media_app.databinding.FragmentWarningBinding
 
 class WarningFragment : Fragment() {
@@ -25,7 +23,7 @@ class WarningFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentWarningBinding.inflate(inflater, container, false)
         return binding.root
     }

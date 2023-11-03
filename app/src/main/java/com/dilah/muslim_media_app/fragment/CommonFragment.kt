@@ -12,11 +12,6 @@ import com.dilah.muslim_media_app.NewsViewModel
 import com.dilah.muslim_media_app.adapter.NewsAdapter
 import com.dilah.muslim_media_app.databinding.FragmentCommonBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CommonFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CommonFragment : Fragment() {
     private var _binding: FragmentCommonBinding? = null
     private val binding get() = _binding as FragmentCommonBinding
@@ -28,7 +23,7 @@ class CommonFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentCommonBinding.inflate(layoutInflater)
         return binding.root
     }

@@ -24,7 +24,7 @@ class AlJazeeraFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAlJazeeraBinding.inflate(layoutInflater)
         return binding.root
     }

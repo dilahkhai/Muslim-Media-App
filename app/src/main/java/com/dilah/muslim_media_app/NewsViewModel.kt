@@ -138,8 +138,8 @@ class NewsViewModel: ViewModel() {
             })
     }
 
-    fun searchNews(query: String) {
-        ApiClient.provideApiService().getSearchNews(query)
+    fun searchNews(q: String) {
+        ApiClient.provideApiService().getSearchNews(q)
             .enqueue(object : Callback<NewsResponse> {
                 override fun onResponse(
                     call: Call<NewsResponse>,

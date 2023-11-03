@@ -5,6 +5,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 
+
+// using object for creating single instance
+// for making request
 object ApiClient {
     fun provideApiService(): ApiService {
         val okHttpClient = OkHttpClient.Builder()
@@ -16,7 +19,7 @@ object ApiClient {
         }
             .readTimeout(10, TimeUnit.SECONDS) //time to wait for the response to the API
             .retryOnConnectionFailure(false)
-            .build()
+            .build() //save the detail request
 
         return Retrofit.Builder()
             .baseUrl("https://newsapi.org")

@@ -14,7 +14,7 @@ import com.dilah.muslim_media_app.adapter.NewsAdapter
 import com.dilah.muslim_media_app.databinding.ActivitySearchableBinding
 
 class SearchableActivity : AppCompatActivity() {
-    private var _binding : ActivitySearchableBinding? = null
+    private var _binding: ActivitySearchableBinding? = null
     private val binding get() = _binding as ActivitySearchableBinding
 
     private var _searchViewModel: NewsViewModel? = null
@@ -32,21 +32,21 @@ class SearchableActivity : AppCompatActivity() {
 
         handleIntent(intent)
 
-        searchViewModel.searchNews.observe(this){
+        searchViewModel.searchNews.observe(this) {
             binding.apply {
-            if (it.articles?.size == 0) {
-                tvNoNews.text = getString(R.string.no_news_text)
-                tvNoNews.visibility = View.VISIBLE
-            } else {
-                rvSearchResult.apply {
-                    val menuAdapter = NewsAdapter()
-                    menuAdapter.setData(it.articles)
-                    adapter = menuAdapter
-                    layoutManager = LinearLayoutManager(this@SearchableActivity)
-                    visibility = View.VISIBLE
+                if (it.articles?.size == 0){
+                    tvNoNews.text = getString(R.string.no_news_text)
+                    tvNoNews.visibility = View.VISIBLE
+                } else {
+                    rvSearchResult.apply {
+                        val menuAdapter = NewsAdapter()
+                        menuAdapter.setData(it.articles)
+                        adapter = menuAdapter
+                        layoutManager = LinearLayoutManager(this@SearchableActivity)
+                        visibility = View.VISIBLE
+                    }
                 }
             }
-        }
             binding.loadingView.root.visibility = View.GONE
         }
 
@@ -60,7 +60,7 @@ class SearchableActivity : AppCompatActivity() {
         handleIntent(intent)
     }
 
-    private fun handleIntent(intent: Intent) {
+    private fun handleIntent(intent: Intent){
         if (Intent.ACTION_SEARCH == intent.action) {
             intent.getStringExtra(SearchManager.QUERY)
                 ?.also { query ->
@@ -73,13 +73,12 @@ class SearchableActivity : AppCompatActivity() {
                         searchView.queryHint = query
                         searchView.clearFocus()
                     }
-                    // checking the search result
                     doMySearch(query)
                 }
         }
     }
 
-    private fun doMySearch(q: String) {
+    private fun doMySearch(q: String){
         searchViewModel.searchNews(q)
     }
 

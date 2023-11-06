@@ -10,6 +10,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+// menangani action ketika ada pengambilan data
+// saving the business logic and create terpisah antara UI dan logic
+// MutableLiveData = can be change, the key is var
+// LiveData = can't be change, the key is val
 class NewsViewModel: ViewModel() {
     private var _commonMuslimNews = MutableLiveData<NewsResponse>()
     val commonMuslimNews get() = _commonMuslimNews as LiveData<NewsResponse>

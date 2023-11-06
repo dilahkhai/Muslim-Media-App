@@ -26,6 +26,7 @@ interface ApiService {
     @GET("/v2/top-headlines")
     fun getAlJazeeraNews(
         @Query("sources") sources: String = "al-jazeera-english",
+        @Query("language") language: String = "en"
     ): Call<NewsResponse>
 
     @GET("/v2/everything")

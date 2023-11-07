@@ -71,7 +71,11 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
             tvDate.text = news.title
             tvDate.text = newsDate
             tvTime.text = newsTime
-            Picasso.get().load(news.urlToImage)
+            Picasso
+                .get()
+                .load(news.urlToImage)
+                .resize(2048, 1600)
+                .onlyScaleDown()
                 .placeholder(R.drawable.ic_logo)
                 .into(ivNews)
         }

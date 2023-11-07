@@ -60,7 +60,7 @@ class SearchableActivity : AppCompatActivity() {
         handleIntent(intent)
     }
 
-    private fun handleIntent(intent: Intent){
+    fun handleIntent(intent: Intent){
         if (Intent.ACTION_SEARCH == intent.action) {
             intent.getStringExtra(SearchManager.QUERY)
                 ?.also { query ->
@@ -78,7 +78,7 @@ class SearchableActivity : AppCompatActivity() {
         }
     }
 
-    private fun doMySearch(q: String){
+    fun doMySearch(q: String){
         searchViewModel.searchNews(q)
     }
 

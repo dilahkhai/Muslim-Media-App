@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 
 @JsonClass(generateAdapter = true) // to automatically generate JSON adapter
 data class NewsResponse(
+
     @Json(name = "totalResults")
     val totalResults: Int? = null,
 

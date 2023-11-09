@@ -150,10 +150,7 @@ class NewsViewModel: ViewModel() {
                     response: Response<NewsResponse>
                 ) {
                     if (response.isSuccessful) {
-                        Log.i(
-                            "ViewModel",
-                            "onResponse: ${response.body()}"
-                        )
+                        Log.i("ViewModel", "onResponse: ${response.body()}")
                         _searchNews.postValue(response.body())
                     } else Log.e(
                         "ViewModel",
@@ -162,10 +159,7 @@ class NewsViewModel: ViewModel() {
                 }
 
                 override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-                    Log.e(
-                        "ViewModel",
-                        "onFailure: " + t.localizedMessage
-                    )
+                    Log.e("ViewModel", "onFailure: " + t.localizedMessage)
                 }
             })
     }

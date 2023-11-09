@@ -60,7 +60,7 @@ dependencies {
 
     //Retrofit
     //HTTP client - with OkHttp
-    //to retrieve data via REST based webservice
+    //to retrieve data via REST based webservice (menerima)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
 

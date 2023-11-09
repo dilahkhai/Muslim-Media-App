@@ -17,14 +17,14 @@ import java.util.Locale
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     private val listNews = ArrayList<ArticlesItem>()
 
-    class MyViewHolder(val binding: ItemNewsOneBinding) :
-    RecyclerView.ViewHolder(binding.root)
-
     fun setData(list: List<ArticlesItem>?) {
         if (list == null) return
         listNews.clear()
         listNews.addAll(list)
     }
+
+    inner class MyViewHolder(val binding: ItemNewsOneBinding) :
+    RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder (
         ItemNewsOneBinding

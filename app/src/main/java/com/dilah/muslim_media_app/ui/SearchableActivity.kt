@@ -21,12 +21,10 @@ class SearchableActivity : AppCompatActivity() {
     private val searchViewModel get() = _searchViewModel as NewsViewModel
 
     private var querySearch: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivitySearchableBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         _searchViewModel = ViewModelProvider(this)[NewsViewModel::class.java]
         binding.loadingView.root.visibility = View.VISIBLE
 
@@ -60,7 +58,8 @@ class SearchableActivity : AppCompatActivity() {
         handleIntent(intent)
     }
 
-    fun handleIntent(intent: Intent){
+    private fun handleIntent(intent: Intent){
+        // verify the action and get the query
         if (Intent.ACTION_SEARCH == intent.action) {
             intent.getStringExtra(SearchManager.QUERY)
                 ?.also { query ->
@@ -78,7 +77,7 @@ class SearchableActivity : AppCompatActivity() {
         }
     }
 
-    fun doMySearch(q: String){
+    private fun doMySearch(q: String){
         searchViewModel.searchNews(q)
     }
 
